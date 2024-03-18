@@ -1,0 +1,145 @@
+<html>
+<head>
+	<title>My Book</title>
+</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<body bgcolor="skyblue">
+	</body>
+    <p>
+    	<center>
+    	<ul style="list-style-type: none;  padding: 0;">
+        <li style="display: inline; background-color:skyblue; margin-right: 10px"><a href="./home.html">HOME</a></li>
+        <li style="display: inline; background-color:skyblue; margin-right: 10px"><a href="./about.html">ABOUT</a></li>
+        <li style="display: inline; background-color:skyblue; margin-right: 10px"><a href="./contact.html">CONTACT</a></li>
+        <li style="display: inline; background-color:skyblue; margin-right: 10px"><a href="./services.html">SERVICES</a></li>
+        <li style="display: inline; background-color:skyblue; margin-right: 10px"><a href="./form.html">FORM</a></li>
+        <li style="display: inline; background-color:skyblue; margin-right: 10px"><a href="./table.html">TABLE</a></li>
+        <li style="display: inline; background-color:skyblue; margin-right: 10px"><a href="./book.html">MY BOOK</a></li>
+    </ul></center>
+
+	</p>
+	<h1>The movie studio management system</h1
+	<ol><h2><u><li>DATABASE</li></u></h2>
+		<p>Database Name: <b>The movie studio management system</b></p>
+		<ul type="square"><h3><u><i><li>Tables</li></i></u></h3>
+
+			<ol type="a"><li><b>Actors TABLE </b></li>
+
+			<p>By organizing actor-related information into a structured table within the movie studio management system's database, the studio can efficiently manage casting decisions, track actor availability, maintain relationships with talent, and enhance collaboration with casting directors and production teams. 
+</p></br>
+
+			<li><b>DIRECTORS TABLE</b></li>
+
+			<p> : By maintaining a Directors table in the movie studio management system's database, the studio can efficiently manage its relationships with directors, track their involvement in various projects, and make informed decisions regarding project assignments, contracts, and collaborations. </b></li>
+			<li><b> FILM INFORMATION TABLE</b></li>
+
+			<p> :  The "Film Information" table serves as a fundamental component for storing and managing data related to individual films produced or distributed by the studio. 
+</p></br>
+
+			<li><b>FINANCIAL MANAGEMENT TABLE</b></li>
+
+			<p>: In a movie studio management system's database, the financial management table serves as a crucial component for tracking and managing financial aspects related to movie production, distribution, and overall studio operations. 
+ </p></br><li><b>PRODUCTION DETAILS TABLE</b></li>
+
+      <p>PRODUCTION DETAILS TABLE: In a movie studio management system database, the "Production Details" table would contain essential information related to the production of each film or project. This table serves as a central repository for capturing and organizing critical data throughout the production lifecycle. 
+ </p></br>
+
+			<li><b>Admin Table</b></li></ol>
+
+			<p> Admin table database structure This is table is table that will be only created by admin and will hold other system users apart from admin  will give them email and password that they will use to login and access the project or system, and also t used to register if she/he’s don’t have an account so once you must to create account in order to login and access or use the system.
+            Note: the created Admin will not have same ability and right in the system.
+ </p></li></br>
+
+			              <h3><u><i><li>Attributes and their relationships</li></i></u></h3>
+			              <ol type="Attributes and their relationships">
+			       <b>SQL QUERIES</b></br></br>
+			       
+    <ol type="i"><li> Actors</li><br>
+
+   CREATE TABLE Actors (<br> 
+    Actor_Id INT PRIMARY KEY AUTO_INCREMENT,<br> 
+    Name VARCHAR(100) NOT NULL,<br> 
+    Email VARCHAR(100),<br> 
+    Phone VARCHAR(20),<br> 
+    Gender ENUM('Male', 'Female')<br> 
+);<br>
+ <li>Directors </li><br>
+  CREATE TABLE Directors (<br> 
+    Director_Id INT PRIMARY KEY AUTO_INCREMENT,<br> 
+    Name VARCHAR(100) NOT NULL,<br> 
+    Telephone VARCHAR(20,<br>
+    Email VARCHAR(100)<br> 
+);<br> 
+			           <li>Film_Information</li><br>
+
+ CREATE TABLE Film_Information (<br> 
+    Film_Info_Id INT PRIMARY KEY AUTO_INCREMENT,<br>  
+    Actor_Id INT,<br>  
+    Director_Id INT,<br>  
+    Duration TIME,<br>  
+    Title VARCHAR(255) NOT NULL,<br>  
+    Release_Date DATE,<br>  
+    FOREIGN KEY (Actor_Id) REFERENCES Actors(Actor_Id),<br>  
+    FOREIGN KEY (Director_Id) REFERENCES Directors(Director_Id)<br>  
+);<br> 
+
+
+ <li>Financial_Management</li><br>
+
+  CREATE TABLE Financial_Management (<br> 
+    Financial_Mgt_Id INT PRIMARY KEY AUTO_INCREMENT,<br>  
+    Film_Info_Id INT,<br> 
+    Budget DECIMAL(15, 2),<br>  
+    Expenses DECIMAL(15, 2),<br>  
+    Revenue DECIMAL(15, 2),<br>  
+    Profit DECIMAL(15, 2),<br> 
+    FOREIGN KEY (Film_Info_Id) REFERENCES Film_Info(Film_Info_Id)<br>  
+);<br> 
+
+
+ <li>Production_Details</li><br>
+ CREATE TABLE Production_Details (<br> 
+    Production_Details_Id INT PRIMARY KEY AUTO_INCREMENT,<br>  
+    Budget DECIMAL(10, 2),<br>  
+    Marketing_Location VARCHAR(100),<br>  
+    Production_Start_Date DATE,<br>  
+    Production_End_Date DATE<br>  
+); <br> 
+
+<P><b>Reference:  
+1. Six-Step Relational Database Design Second Edition (Fidel A Captain, 2016)  2. www.erbessd-instruments.com </b>  </P>
+
+	</body>
+
+        </ul>
+		<h2><u><li>JAVA</li></u></h2>
+		
+		<ul type="square"><h3><u><i><li>Description</li></i></u></h3><br>
+			<p> In this chapter I will be describing how powerful generalpurpose programming language was used to create the analyzed system. Under this chapter I will undergo full detail of how everything will function together with database that have been describe above and how it cope with full analyzed system.  Tools used to develop this system in java programming:<br><br>
+			 <h4><u><li>Tools used to develop this system in java programming</li></u></h4>
+		
+Eclipse IDE: an integrated development environment used in computer programming. It contains a base workspace and an extensible plug-in system for customizing the environment. It is the second-most-popular IDE for Java development, and, until 2016, was the most popular.  
+JAR stands for Java Archive. It's a file format based on the popular ZIP file format and is used for aggregating many files into one. Although JAR can be used as a general archiving tool, the primary motivation for its development was so that Java applets and their requisite components.  
+</p></br>
+			              <h3><u><i><li>Forms and Images</li></i></u></h3>
+
+        </ul>
+        <P><i>DIRECTORS TABLE</i></p>
+        <img src="image/DIRECTORS FORM.jpg" width=600 height=200><br>
+        <P><i>SINUP FORM</i></p>
+        <img src="image/SINUP FORM.jpg" width=600 height=200><br>
+        <P><i>LOGIN FORM</i></p>
+        <img src="image/LOGIN FORM.jpg" width=600 height=200><br>
+        <P><i>MENU FORM</i></p>
+        <img src="image/MENU FORM.jpg" width=600 height=200><br>
+        <P><b>References<br> 
+1.https://www.javatpoint.com/operators-in-java<br>
+2.	www.eclipse.org>windowbuilider<br>   
+3.	www.vogella.com>article<br>   
+4.	www.formdev.com>ides>eclipse   
+</b>  </P>
+</ol>
+	<marquee><p><i><h2 style="color: white;">Prepared By:</i></p>GWIZIMPUNDU IRENE</h2></marquee>
+	</body>
+	</html>
